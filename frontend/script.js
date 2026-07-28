@@ -2,7 +2,7 @@
 // Configuration
 // ============================================
 
-const API_BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE_URL = 'https://mental-health-score-predictor-h49o.onrender.com' || 'http://127.0.0.1:8000';
 const API_ENDPOINT = `${API_BASE_URL}/predict`;
 
 // Score interpretation thresholds and details (scale: 3-10)
