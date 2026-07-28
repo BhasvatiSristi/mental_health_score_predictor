@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Score Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 6v6l4 2"></path>
+                </svg>
+                <span>MindHealth AI</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Mental Health Score Predictor</h1>
+                <p class="hero-subtitle">Predict your mental wellness score using AI based on your social media usage and lifestyle patterns.</p>
+            </div>
+            <div class="hero-illustration">
+                <svg viewBox="0 0 200 200" class="illustration">
+                    <circle cx="100" cy="100" r="90" fill="#F0F4FF" stroke="#E0E7FF" stroke-width="2"/>
+                    <circle cx="100" cy="100" r="70" fill="#FFFFFF" stroke="#E0E7FF" stroke-width="1"/>
+                    
+                    <!-- Brain wave -->
+                    <path d="M 40 100 Q 50 85 60 100 T 80 100" stroke="#4F46E5" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <path d="M 90 100 Q 100 70 110 100 T 130 100" stroke="#7C3AED" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <path d="M 140 100 Q 150 85 160 100" stroke="#4F46E5" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    
+                    <!-- Heart icon -->
+                    <g transform="translate(100, 140)">
+                        <path d="M 0 -8 C -6 -14 -14 -14 -14 -6 C -14 0 -4 8 0 12 C 4 8 14 0 14 -6 C 14 -14 6 -14 0 -8" fill="#06B6D4" opacity="0.8"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Form Section -->
+        <section class="form-section" id="formSection">
+            <div class="form-container">
+                <div class="section-header">
+                    <h2>Your Mental Health Assessment</h2>
+                    <p>Provide your details for an AI-powered wellness prediction</p>
+                </div>
+
+                <form id="predictionForm" class="prediction-form">
+                    <!-- Row 1 -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input 
+                                type="number" 
+                                id="age" 
+                                name="age" 
+                                min="10" 
+                                max="30" 
+                                required
+                                placeholder="18"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input 
+                                type="text" 
+                                id="country" 
+                                name="country" 
+                                required
+                                placeholder="India"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="academicLevel">Academic Level</label>
+                            <select id="academicLevel" name="academic_level" required>
+                                <option value="">Select level</option>
+                                <option value="High School">High School</option>
+                                <option value="Undergraduate">Undergraduate</option>
+                                <option value="Graduate">Graduate</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="platform">Most Used Platform</label>
+                            <select id="platform" name="most_used_platform" required>
+                                <option value="">Select platform</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="WhatsApp">WhatsApp</option>
+                                <option value="YouTube">YouTube</option>
+                                <option value="TikTok">TikTok</option>
+                                <option value="Twitter">Twitter</option>
+                                <option value="LinkedIn">LinkedIn</option>
+                                <option value="Snapchat">Snapchat</option>
+                                <option value="LINE">LINE</option>
+                                <option value="WeChat">WeChat</option>
+                                <option value="KakaoTalk">KakaoTalk</option>
+                                <option value="VKontakte">VKontakte</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="purpose">Purpose of Use</label>
+                            <select id="purpose" name="purpose_of_use" required>
+                                <option value="">Select purpose</option>
+                                <option value="Education">Education</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Networking">Networking</option>
+                                <option value="News">News</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="avgUsage">Daily Usage Hours</label>
+                            <input 
+                                type="number" 
+                                id="avgUsage" 
+                                name="avg_daily_usage_hours" 
+                                step="0.1" 
+                                min="0" 
+                                max="24" 
+                                required
+                                placeholder="4.5"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="unlocks">Daily Unlocks</label>
+                            <input 
+                                type="number" 
+                                id="unlocks" 
+                                name="daily_unlocks" 
+                                min="0" 
+                                required
+                                placeholder="50"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Row 5 -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="studyHours">Study Hours</label>
+                            <input 
+                                type="number" 
+                                id="studyHours" 
+                                name="study_hours" 
+                                step="0.1" 
+                                min="0" 
+                                max="24" 
+                                required
+                                placeholder="3"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="activity">Physical Activity Hours</label>
+                            <input 
+                                type="number" 
+                                id="activity" 
+                                name="physical_activity_hours" 
+                                step="0.1" 
+                                min="0" 
+                                max="24" 
+                                required
+                                placeholder="1.5"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Row 6 -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="sleep">Sleep Hours Per Night</label>
+                            <input 
+                                type="number" 
+                                id="sleep" 
+                                name="sleep_hours_per_night" 
+                                step="0.1" 
+                                min="0" 
+                                max="24" 
+                                required
+                                placeholder="7"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="stress">Stress Level</label>
+                            <select id="stress" name="stress_level" required>
+                                <option value="">Select level</option>
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                                <option value="Very High">Very High</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                        <span id="btnText">Predict Score</span>
+                        <div id="spinner" class="spinner" style="display: none;"></div>
+                    </button>
+                </form>
+
+                <!-- Error Message -->
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" id="resultsSection" style="display: none;">
+            <!-- Score Card -->
+            <div class="results-container">
+                <div class="score-card">
+                    <div class="score-content">
+                        <svg class="circular-progress" viewBox="0 0 200 200">
+                            <!-- Background circle -->
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#E5E7EB" stroke-width="8"/>
+                            <!-- Progress circle -->
+                            <circle 
+                                id="progressCircle" 
+                                cx="100" 
+                                cy="100" 
+                                r="97" 
+                                fill="none" 
+                                stroke="url(#progressGradient)" 
+                                stroke-width="8"
+                                stroke-linecap="round"
+                                stroke-dasharray="565.48"
+                                stroke-dashoffset="565.48"
+                            />
+                            <defs>
+                                <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#4F46E5"/>
+                                    <stop offset="100%" stop-color="#7C3AED"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="score-text">
+                            <div class="score-number" id="scoreNumber">3.0</div>
+                            <div class="score-label"> /10 Mental Health Score </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interpretation Card -->
+                <div class="interpretation-card">
+                    <div class="interpretation-header">
+                        <div class="interpretation-badge" id="interpretationBadge"></div>
+                        <h3 id="interpretationTitle">Excellent Mental Health</h3>
+                    </div>
+                    <p id="interpretationText">Your mental health score indicates excellent overall wellness.</p>
+                </div>
+
+                <!-- Recommendations Card -->
+                <div class="recommendations-card">
+                    <h3>Recommendations</h3>
+                    <div class="recommendations-content" id="recommendationsContent">
+                        <p>Keep maintaining healthy habits for sustained mental wellness.</p>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="results-actions">
+                    <button class="btn btn-secondary" onclick="resetForm()">
+                        Take Assessment Again
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Mental Health Score Predictor. Powered by AI.</p>
+            <p class="footer-disclaimer">This assessment is for informational purposes only and not a substitute for professional medical advice.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
